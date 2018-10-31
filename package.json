@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --port 5000",
-    "build": "ng build",
+    "standardize": "prettier **/*.ts --write",
+    "start": "npm run standardize && ng serve --port 5000",
+    "build": "npm run standardize && ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -23,6 +24,13 @@
     "core-js": "^2.5.4",
     "rxjs": "~6.3.3",
     "zone.js": "~0.8.26"
+  },
+  "prettier": {
+    "printWidth": 90,
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "es5",
+    "parser": "typescript"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.10.0",
